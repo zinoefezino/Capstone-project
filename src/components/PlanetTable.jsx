@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../styles/global.css';
 
 const planetImages = {
   Mercury: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg',
@@ -34,38 +35,26 @@ const PlanetTable = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div style={{ backgroundColor: '#f0f4ff', padding: '40px' }}>
-      <h1 style={{ textAlign: 'center', color: '#1a3a8f' }}>
+    <div id='Image' className="planet-container">
+      <h1 className="planet-title">
         Visualizing the Differences Between Planets
       </h1>
-      <p style={{ textAlign: 'center', color: '#555', maxWidth: '600px', margin: '0 auto 40px' }}>
+      <p className="planet-subtitle">
         Each planet in our solar system has unique physical characteristics.
       </p>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '24px',
-        maxWidth: '1100px',
-        margin: '0 auto'
-      }}>
+      <div className="planet-grid">
         {data.map((planet, index) => (
-          <div key={index} style={{
-            backgroundColor: 'white',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-          }}>
-            <img
-              src={planetImages[planet.planet]}
-              alt={planet.planet}
-              style={{ width: '100%', height: '200px', objectFit: 'cover' }}
-            />
-            <div style={{ padding: '16px', textAlign: 'center' }}>
-              <p style={{ fontWeight: 'bold', margin: '0 0 8px' }}>{planet.planet}</p>
-              <p style={{ fontWeight: 'bold', margin: 0 }}>
-                Distance from Sun: {planet.distanceFromSun} million km
-              </p>
-            </div>
+          <div key={index} className="planet-card">
+            <figure>
+              <img
+                src={planetImages[planet.planet]}
+                alt={planet.planet}
+              />
+              <figcaption>
+                <p>{planet.planet}</p>
+                <p>Distance from Sun: {planet.distanceFromSun} million km</p>
+              </figcaption>
+            </figure>
           </div>
         ))}
       </div>
