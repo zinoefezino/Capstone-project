@@ -7,7 +7,7 @@ const VideoSection = () => {
         <div className="video-text">
           <h2>How Planetary Data Helps Us Understand Space</h2>
           <p>
-            Planetary science goes beyond images. Comparing mass, diameter, gravity, and density, we gain insight into how planets form, behave, and interact within the solar system.
+            Planetary science goes beyond images. Comparing <span style={{ color: '#164BAF' }}>mass, diameter, gravity, </span>  and <span style={{ color: '#164BAF' }}>density,</span>  we gain insight into how planets form, behave, and interact within the solar system.
           </p>
         </div>
         <div className="video-wrapper">

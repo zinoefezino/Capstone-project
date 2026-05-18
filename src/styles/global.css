@@ -141,7 +141,7 @@ padding is optional but i do this because of lists*/
 
 
 
-/* hero */
+/* hero section */
 .hero { 
   background: #051540; 
   padding: 5px 0px 50px 0px; 
@@ -279,6 +279,7 @@ h1 {
 
 
 /* --- RESPONSIVENESS (Mobile View) --- */
+/* hero*/
 @media (max-width: 768px) { 
   .hero .container { 
     grid-template-columns: 1fr;  
@@ -309,7 +310,8 @@ h1 {
   .container { 
     padding: 4px 10px; 
   }
-
+  
+/* video */
 .video-section .container {
         grid-template-columns: 1fr;
         text-align: center;
