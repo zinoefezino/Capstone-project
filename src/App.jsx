@@ -5,9 +5,11 @@ import VideoSection from "./components/VideoSection";
 import Footer from "./components/Footer";
 import PlanetTable from "./components/PlanetTable";
 import ImageGallery from "./components/ImageGallery";
+import Header from "./components/Header";
 function App() {
   return (
     <div>
+      <Header />
       <Hero />;
       <VideoSection />
       <ImageGallery />

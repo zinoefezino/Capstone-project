@@ -154,6 +154,37 @@ body {
     sans-serif;
 }
 
+.header {
+  width: 100%;
+  padding: 16px 24px;
+  background: #051540;
+}
+
+/* wrapper inside header */
+.header > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* desktop: left aligned */
+  gap: 10px;
+}
+
+/* logo image */
+.header img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* text link */
+.header span a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: Inter, system-ui, sans-serif;
+}
+
 h1 {
   font-family: "Inter", sans-serif;
   font-weight: 700;
@@ -839,6 +870,10 @@ h1 {
 /* ================================================== */
 
 @media (max-width: 768px) {
+  .header > div {
+    justify-content: center; /* mobile: center aligned */
+  }
+
   /* Hero */
   .hero .container {
     grid-template-columns: 1fr;
