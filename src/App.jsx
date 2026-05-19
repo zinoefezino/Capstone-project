@@ -1,3 +1,14 @@
+import PlanetTable from './components/PlanetTable';
+import Header from "./Header";
+
+function App() {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+}
+import PlanetTable from "./PlanetTable";
 import ContactForm from "./components/ContactForm";
 import React from 'react';
 

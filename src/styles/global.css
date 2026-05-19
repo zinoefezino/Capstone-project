@@ -652,6 +652,66 @@ h1 {
   .container { 
     padding: 4px 10px; 
   }
+}
+.header{
+    padding: 16px;
+    background: #051540;
+}
+
+.header div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header img {
+  width: 32px;
+  height: 32px;
+}
+
+.header a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+.table-section {
+    padding: 64px 5%;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+.planet-table {
+    width: 100%;
+    border-collapse: collapse; 
+    text-align: center;
+    border-radius: 12px; 
+    overflow: hidden;
+    border: 1px solid #E0E0E0;
+    margin-top: 30px;
+}
+.planet-table thead th {
+    background-color: #164BAF; 
+    color: #FFFFFF;
+    padding: 16px;
+    font-weight: 600;
+    border: 1px solid #FFFFFF;
+}
+.planet-table td {
+    padding: 14px;
+    color: #333333;
+    background-color: #F9FAFC;
+    border: 1px solid #E0E0E0; 
+}
+.planet-table th.side-table {
+    background-color: #DDE8FA;
+    color: #051540;
+    font-weight: 700;
+    border: 1px solid #FFFFFF;
+    vertical-align: middle;
+}
+
+
   
 /* video */
 .video-section .container {
