@@ -340,4 +340,337 @@ body {
     width: 100%;
     justify-content: center;
   }
+/* Reset CSS by Amaka Ndukwu */
+
+/* making use of :where to allow for low specificity making it easy to override */
+
+
+/* 1. border-box for box model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. remove default margin 
+padding is optional but i do this because of lists*/
+
+:where(:not(dialog)) {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. great for in-page linking */
+@media(prefers-reduced-motion:no-preference) {
+    :where(html) {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 4. line height and text rendering improvement */
+:where(html) {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. ensure full viewport height */
+:where(html, body) {
+    min-block-size: 100%;
+}
+
+/* 6. improve line wrapping */
+:where(h1, h2, h3,
+    h4, h5, h6) {
+    text-wrap: balance;
+}
+
+:where(p) {
+    text-wrap: pretty;
+}
+
+:where(figure)>:where(figcaption) {
+    text-wrap: balance;
+}
+
+:where(p, h1, h2, h3,
+    h4, h5, h6) {
+    overflow-wrap: break-word;
+}
+
+
+
+/* 7. making media elements block-level */
+:where(img,
+    svg,
+    video,
+    canvas,
+    picture,
+    audio,
+    iframe,
+    embed,
+    object) {
+    display: block
+}
+
+:where(img, svg, video, canvas, picture) {
+    block-size: auto;
+    max-inline-size: 100%
+}
+
+/* 8. inherit font and letter spacing for form controls */
+:where(input,
+    button,
+    textarea,
+    select),
+:where(input[type=file])::-webkit-file-upload-button {
+    font: inherit;
+    letter-spacing: inherit
+}
+
+/* 9. textarea can only resized vertically and will grow to adjust its content */
+:where(textarea) {
+    resize: vertical;
+   field-sizing: content;
+}
+
+/* 10. table */
+:where(table) {
+    width: fit-content;
+    border-collapse: collapse;
+}
+
+:where(pre) {
+    direction: ltr;
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+    writing-mode: lr
+}
+
+:where(a[href],
+    area,
+    button,
+    input:not([type=text],
+        [type=email],
+        [type=number],
+        [type=password],
+        [type=""],
+        [type=tel],
+        [type=url]),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*="-"],
+        pre)) {
+    cursor: pointer
+}
+
+/*  this will disable additional non-standard gestures such as double-tap to zoom*/
+:where(a[href],
+    area,
+    button,
+    input,
+    label[for],
+    select,
+    summary,
+    textarea,
+    [tabindex]:not([tabindex*="-"])) {
+    touch-action: manipulation
+}
+
+
+
+
+
+/* hero section */
+.hero { 
+  background: #051540; 
+  padding: 5px 0px 50px 0px; 
+  width: 100%; 
+}
+
+.hero .container { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr;  
+  align-items: center;  
+  gap: 32px;
+  padding: 0px 63px;
+}
+
+.hero img { 
+  width: 100%; 
+  max-width: 644px;  
+  height: auto;
+  align-items: center; 
+}
+
+.hero-text { 
+  grid-column: 1;  
+  grid-row: 1; 
+  align-items: center;  
+  justify-content: center; 
+}
+
+.hero a { 
+  text-decoration: none; 
+}   
+
+.hero-button { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  align-items: center;  
+  gap: 12px; 
+  font-size: 12px; 
+  margin-top: 40px;
+}
+
+.primary-button { 
+  background-color: #164BAF; 
+  white-space: nowrap; 
+  color: white; 
+  border: none; 
+  font-weight: 600; 
+  border-radius: 4px; 
+  padding: 12px 24px; 
+  cursor: pointer; 
+}
+
+.secondary-button { 
+  display: inline-block; 
+  background-color: #051540; 
+  color: white; 
+  padding: 12px 24px; 
+  font-weight: 600; 
+  border-radius: 4px; 
+  text-decoration: none; 
+  cursor: pointer; 
+  border: 0.5px solid #DDDDDD; 
+  box-sizing: border-box; 
+  white-space: nowrap;
+}
+
+/* Typography used in Hero */
+h1 { 
+  font-family: 'Inter', sans-serif;
+  font-weight: 700; 
+  font-size: 48px;  
+  line-height: 121%; 
+  letter-spacing: 0%; 
+  margin-bottom: 24px; 
+  color: #ffffff;
+}
+
+#hero-p { 
+  font-family: 'Inter', sans-serif;
+  color: #DDDDDD; 
+  font-weight: 500; 
+  line-height: 160%;
+  font-size: 18px;
+}
+
+
+/* video section */
+.video-section {
+    padding: 34px 5%; 
+    width: 100%;
+    text-align: center; 
+}
+
+.video-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; 
+    gap: 50px;
+    max-width: 1200px;
+    margin: 30px 0 40px 0;
+}
+
+.video-text {
+        width: 100%;
+        order: 2;
+}
+.video-text h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+.video-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 180%;
+    color: #333;
+}
+
+.video-wrapper {
+    width: 100%;
+    order: 1;
+}
+
+.video-wrapper video {
+    width: 100%;     
+    height: auto;    
+    border-radius: 30px;
+    display: block;  
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* --- RESPONSIVENESS (Mobile View) --- */
+/* hero*/
+@media (max-width: 768px) { 
+  .hero .container { 
+    grid-template-columns: 1fr;  
+    grid-template-rows: auto; 
+    text-align: center;  
+    padding: 0px 30px;
+  }
+
+  .hero-image { 
+    grid-column: 1; 
+    grid-row: 1; 
+    justify-content: center; 
+  }
+
+  .hero-button { 
+    justify-content: center;  
+    flex-wrap: wrap;  
+  }  
+
+  .hero h1 { 
+    margin-top: -30px;
+    font-size: 30px;  
+  }
+  #hero-p { 
+    font-size: 18px;  
+}
+
+  .container { 
+    padding: 4px 10px; 
+  }
+  
+/* video */
+.video-section .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .video-text {
+        order: 1;
+    }
+
+    .video-wrapper {
+        order: 2;
+    }
+
+    .video-text h2 {
+        font-size: 28px;
+    }
+    .video-text p {
+        font-size: 16px;
+    }
 }
