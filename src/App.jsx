@@ -1,3 +1,4 @@
+import PlanetTable from './components/PlanetTable';
 import Header from "./Header";
 
 function App() {
