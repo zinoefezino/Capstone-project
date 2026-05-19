@@ -6,8 +6,6 @@ function Footer() {
         <div className="footer-about">
           <h3>About</h3>
 
-          <h4 className="members-heading">Group 18 members</h4>
-
           <ul className="members-list">
             <li>FEYISAYO</li>
             <li>CHIBUZOR</li>
