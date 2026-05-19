@@ -1,44 +1,799 @@
+/* ================================================== */
+/* TABLE OF CONTENTS                                  */
+/*                                                    */
+/*  1. RESET                                          */
+/*  2. GLOBAL / TYPOGRAPHY                            */
+/*  3. LAYOUT / CONTAINER                             */
+/*  4. BUTTONS                                        */
+/*  5. HERO SECTION                                   */
+/*  6. VIDEO SECTION                                  */
+/*  7. PLANET CARDS SECTION                           */
+/*  8. PLANET TABLE SECTION                           */
+/*  9. CONTACT SECTION                                */
+/*     9a. Contact Text                               */
+/*     9b. Form                                       */
+/*     9c. Form Errors                                */
+/*     9d. Submit Button                              */
+/*     9e. Spinner                                    */
+/*     9f. Success State                              */
+/* 10. FOOTER                                         */
+/* 11. RESPONSIVE — max-width: 992px                  */
+/* 12. RESPONSIVE — max-width: 768px                  */
+/* 13. RESPONSIVE — max-width: 640px                  */
+/* 14. RESPONSIVE — max-width: 600px                  */
+/* ================================================== */
+
+/* ================================================== */
+/* 1. RESET                                           */
+/* Reset CSS by Amaka Ndukwu                          */
+/* ================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:where(:not(dialog)) {
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(html) {
+    scroll-behavior: smooth;
+  }
+}
+
+:where(html) {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(html, body) {
+  min-block-size: 100%;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+}
+
+:where(p) {
+  text-wrap: pretty;
+}
+
+:where(figure) > :where(figcaption) {
+  text-wrap: balance;
+}
+
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+:where(img, svg, video, canvas, picture, audio, iframe, embed, object) {
+  display: block;
+}
+
+:where(img, svg, video, canvas, picture) {
+  block-size: auto;
+  max-inline-size: 100%;
+}
+
+:where(input, button, textarea, select),
+:where(input[type="file"])::-webkit-file-upload-button {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+:where(textarea) {
+  resize: vertical;
+  field-sizing: content;
+}
+
+:where(table) {
+  width: fit-content;
+  border-collapse: collapse;
+}
+
+:where(pre) {
+  direction: ltr;
+  max-inline-size: max-content;
+  min-inline-size: 0;
+  white-space: pre;
+  writing-mode: lr;
+}
+
+:where(
+  a[href],
+  area,
+  button,
+  input:not(
+    [type="text"],
+    [type="email"],
+    [type="number"],
+    [type="password"],
+    [type=""],
+    [type="tel"],
+    [type="url"]
+  ),
+  label[for],
+  select,
+  summary,
+  [tabindex]:not([tabindex*="-"], pre)
+) {
+  cursor: pointer;
+}
+
+:where(
+  a[href],
+  area,
+  button,
+  input,
+  label[for],
+  select,
+  summary,
+  textarea,
+  [tabindex]:not([tabindex*="-"])
+) {
+  touch-action: manipulation;
+}
+
+/* ================================================== */
+/* 2. GLOBAL / TYPOGRAPHY                             */
+/* ================================================== */
+
+html,
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 121%;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+/* ================================================== */
+/* 3. LAYOUT / CONTAINER                              */
+/* ================================================== */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ================================================== */
+/* 4. BUTTONS                                         */
+/* ================================================== */
+
+.primary-button {
+  background-color: #164baf;
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 12px 24px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.secondary-button {
+  display: inline-block;
+  background-color: #051540;
+  color: white;
+  border: 0.5px solid #dddddd;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 12px 24px;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* ================================================== */
+/* 5. HERO SECTION                                    */
+/* ================================================== */
+
+.hero {
+  background: #051540;
+  padding: 5px 0px 50px 0px;
+  width: 100%;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+  padding: 0px 63px;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 644px;
+  height: auto;
+  align-items: center;
+}
+
+.hero a {
+  text-decoration: none;
+}
+
+.hero-text {
+  grid-column: 1;
+  grid-row: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  margin-top: 40px;
+}
+
+#hero-p {
+  font-family: "Inter", sans-serif;
+  color: #dddddd;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+}
+
+/* ================================================== */
+/* 6. VIDEO SECTION                                   */
+/* ================================================== */
+
+.video-section {
+  padding: 34px 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.video-section .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 30px 0 40px 0;
+}
+
+.video-text {
+  width: 100%;
+  order: 2;
+}
+
+.video-text h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  line-height: 150%;
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
+.video-text p {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 180%;
+  color: #333;
+}
+
+.video-wrapper {
+  width: 100%;
+  order: 1;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================================== */
+/* 7. PLANET CARDS SECTION                            */
+/* ================================================== */
+
+.planet-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  background: #eef4ff;
+  border-radius: 28px;
+}
+
+.planet-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2b3f8f;
+  margin-bottom: 14px;
+}
+
+.planet-subtitle {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 55px;
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.planet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 24px;
+}
+
+.planet-card {
+  background: transparent;
+}
+
+.planet-card figure {
+  margin: 0;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+}
+
+.planet-card figure:hover {
+  transform: translateY(-4px);
+}
+
+.planet-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.planet-card figcaption {
+  background: white;
+  padding: 18px 14px 20px;
+  text-align: center;
+}
+
+.planet-card figcaption p:first-child {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.planet-card figcaption p:last-child {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ================================================== */
+/* 8. PLANET TABLE SECTION                            */
+/* ================================================== */
+
+.table-section {
+  background: #f7f8fb;
+  color: #172033;
+  padding: 72px 20px;
+}
+
+.table-text {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.table-text h2 {
+  margin: 0 0 10px;
+  color: #273569;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.table-text p {
+  max-width: 760px;
+  margin: 0 0 28px;
+  color: #30384d;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.table-text strong {
+  display: block;
+  margin-bottom: 12px;
+  color: #1f2937;
+  font-size: 0.9rem;
+}
+
+.table {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.planet-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  background: #eef4ff;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.planet-table th,
+.planet-table td {
+  padding: 18px 20px;
+  border: 2px solid #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  color: #172033;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.planet-table thead th {
+  background: #1f2f8f;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.planet-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.planet-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.planet-table td {
+  background: #f7faff;
+}
+
+.side-table {
+  background: #d8e6fa;
+  color: #1f2b4d;
+  font-weight: 800;
+}
+
+/* ================================================== */
+/* 9. CONTACT SECTION                                 */
+/* ================================================== */
+
+.contact-section {
+  padding: 88px 24px;
+  background: #ffffff;
+  width: 100%;
+}
+
+.contact-section .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* -------------------- */
+/* 9a. Contact Text     */
+/* -------------------- */
+
+.contact-text {
+  max-width: 620px;
+  margin-bottom: 52px;
+}
+
+.contact-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #164baf;
+  margin-bottom: 14px;
+}
+
+.contact-text p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6b7280;
+}
+
+/* -------------------- */
+/* 9b. Form             */
+/* -------------------- */
+
+.contact-form {
+  width: 100%;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: 0.01em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+  font-size: 0.95rem;
+  color: #111827;
+  outline: none;
+  font-family: inherit;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #d1d5db;
+  background: #ffffff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #164baf;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(22, 75, 175, 0.1);
+}
+
+.form-group textarea {
+  height: 120px;
+  min-height: 80px;
+}
+
+/* -------------------- */
+/* 9c. Form Errors      */
+/* -------------------- */
+
+.form-group input.input-error,
+.form-group textarea.input-error {
+  border-color: #ef4444;
+  background: #fff8f8;
+}
+
+.form-group input.input-error:focus,
+.form-group textarea.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-msg {
+  font-size: 0.8rem;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.form-error {
+  font-size: 0.875rem;
+  color: #ef4444;
+  padding: 10px 14px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+}
+
+/* -------------------- */
+/* 9d. Submit Button    */
+/* -------------------- */
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  padding: 13px 28px;
+  border: none;
+  border-radius: 10px;
+  background: #164baf;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  font-family: inherit;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #123d8f;
+  box-shadow: 0 4px 16px rgba(22, 75, 175, 0.25);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) .btn-icon {
+  transform: translateX(2px) translateY(-2px);
+}
+
+/* -------------------- */
+/* 9e. Spinner          */
+/* -------------------- */
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: spin 0.65s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------------- */
+/* 9f. Success State    */
+/* -------------------- */
+
+.success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 64px 24px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.success-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #eff6ff;
+  border: 2px solid #bfdbfe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #164baf;
+  margin-bottom: 24px;
+}
+
+.success-state h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.success-state p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+.reset-btn {
+  background: none;
+  border: 1.5px solid #164baf;
+  color: #164baf;
+  padding: 11px 24px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.reset-btn:hover {
+  background: #164baf;
+  color: #ffffff;
+}
+
+/* ================================================== */
+/* 10. FOOTER                                         */
+/* ================================================== */
+
 .footer {
   background-color: #0f1f4b;
   color: white;
   padding: 40px 20px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer-container {
   max-width: 1200px;
-  margin:  auto;
+  margin: auto;
 }
 
-.footer-about h3{
+.footer-about h3 {
   margin-bottom: 18px;
   font-size: 28px;
   font-weight: 700;
 }
 
-.team-description {
-  font-size: 17px;
-  line-height: 1.7;
-  max-width: 600;
-  margin-bottom: 22px;
-  font-weight: 400;
-
+.footer-about p {
+  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
 .members-list {
   list-style: none;
   padding: 0;
 }
+
+.members-heading {
+  margin-bottom: 10px;
+}
+
 .members-list li {
   font-size: 16px;
-  margin-bottom: 10px;
   font-weight: 500;
+  margin-bottom: 10px;
 }
-.footer-about p {
-  line-height: 1.5;
-  margin-bottom: 8px;
-}
-hr {
+
+.footer hr {
   margin: 35px 0;
   border: 0.5px solid rgba(225, 225, 223, 0.3);
 }
@@ -53,345 +808,219 @@ hr {
 
 .footer-text p {
   font-size: 16px;
-  line-height: 1.2;
   font-weight: 600;
+  line-height: 1.2;
 }
+
 .footer-links {
   display: flex;
   gap: 28px;
-
 }
 
 .footer-links a {
-  color: white; !important;
+  color: white;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
+.footer-links a:hover {
+  opacity: 0.8;
+}
 
-/*mobile version*/
+/* ================================================== */
+/* 11. RESPONSIVE — max-width: 992px                  */
+/* ================================================== */
+
+@media (max-width: 992px) {
+  .planet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================================================== */
+/* 12. RESPONSIVE — max-width: 768px                  */
+/* ================================================== */
+
 @media (max-width: 768px) {
+  /* Hero */
+  .hero .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    text-align: center;
+    padding: 0px 30px;
+  }
+
+  .hero-image {
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    margin-top: -30px;
+    font-size: 30px;
+  }
+
+  #hero-p {
+    font-size: 18px;
+  }
+
+  .hero-button {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    padding: 4px 10px;
+  }
+
+  /* Video */
+  .video-section .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .video-text {
+    order: 1;
+  }
+
+  .video-wrapper {
+    order: 2;
+  }
+
+  .video-text h2 {
+    font-size: 28px;
+  }
+
+  .video-text p {
+    font-size: 16px;
+  }
+
+  /* Table */
+  .table-section {
+    padding: 48px 14px;
+  }
+
+  .table-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .table-text p,
+  .table-text strong {
+    font-size: 0.85rem;
+  }
+
+  .planet-table th,
+  .planet-table td {
+    padding: 14px 16px;
+    font-size: 0.82rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 32px 20px;
+  }
+
+  .footer-about h3 {
+    font-size: 24px;
+  }
+
+  .team-description {
+    font-size: 16px;
+  }
+
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
   }
-  /* Reset CSS by Amaka Ndukwu */
 
-  /* making use of :where to allow for low specificity making it easy to override */
-
-  /* 1. border-box for box model */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
-  /* 2. remove default margin 
-padding is optional but i do this because of lists*/
+  .footer-text p,
+  .footer-links a,
+  .members-list li {
+    font-size: 15px;
+  }
+}
 
-  :where(:not(dialog)) {
-    margin: 0;
-    padding: 0;
+/* ================================================== */
+/* 13. RESPONSIVE — max-width: 640px                  */
+/* ================================================== */
+
+@media (max-width: 640px) {
+  /* Hide planet table on mobile */
+  .table-section {
+    display: none;
   }
 
-  /* 3. great for in-page linking */
-  @media (prefers-reduced-motion: no-preference) {
-    :where(html) {
-      scroll-behavior: smooth;
-    }
+  /* Contact */
+  .contact-section {
+    padding: 64px 20px;
   }
 
-  /* 4. line height and text rendering improvement */
-  :where(html) {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+  .contact-text {
+    margin-bottom: 40px;
   }
 
-  /* 5. ensure full viewport height */
-  :where(html, body) {
-    min-block-size: 100%;
+  .contact-text h2 {
+    font-size: 1.6rem;
   }
 
-  /* 6. improve line wrapping */
-  :where(h1, h2, h3, h4, h5, h6) {
-    text-wrap: balance;
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  :where(p) {
-    text-wrap: pretty;
-  }
-
-  :where(figure) > :where(figcaption) {
-    text-wrap: balance;
-  }
-
-  :where(p, h1, h2, h3, h4, h5, h6) {
-    overflow-wrap: break-word;
-  }
-
-  /* 7. making media elements block-level */
-  :where(img, svg, video, canvas, picture, audio, iframe, embed, object) {
-    display: block;
-  }
-
-  :where(img, svg, video, canvas, picture) {
-    block-size: auto;
-    max-inline-size: 100%;
-  }
-
-  /* 8. inherit font and letter spacing for form controls */
-  :where(input, button, textarea, select),
-  :where(input[type="file"])::-webkit-file-upload-button {
-    font: inherit;
-    letter-spacing: inherit;
-  }
-
-  /* 9. textarea can only resized vertically and will grow to adjust its content */
-  :where(textarea) {
-    resize: vertical;
-    field-sizing: content;
-  }
-
-  /* 10. table */
-  :where(table) {
-    width: fit-content;
-    border-collapse: collapse;
-  }
-
-  :where(pre) {
-    direction: ltr;
-    max-inline-size: max-content;
-    min-inline-size: 0;
-    white-space: pre;
-    writing-mode: lr;
-  }
-
-  :where(
-    a[href],
-    area,
-    button,
-    input:not(
-      [type="text"],
-      [type="email"],
-      [type="number"],
-      [type="password"],
-      [type=""],
-      [type="tel"],
-      [type="url"]
-    ),
-    label[for],
-    select,
-    summary,
-    [tabindex]:not([tabindex*="-"], pre)
-  ) {
-    cursor: pointer;
-  }
-
-  /*  this will disable additional non-standard gestures such as double-tap to zoom*/
-  :where(
-    a[href],
-    area,
-    button,
-    input,
-    label[for],
-    select,
-    summary,
-    textarea,
-    [tabindex]:not([tabindex*="-"])
-  ) {
-    touch-action: manipulation;
-  }
-
-  /* hero section */
-  .hero {
-    background: #051540;
-    padding: 5px 0px 50px 0px;
+  .submit-btn {
     width: 100%;
-  }
-
-  .hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 32px;
-    padding: 0px 63px;
-  }
-
-  .hero img {
-    width: 100%;
-    max-width: 644px;
-    height: auto;
-    align-items: center;
-  }
-
-  .hero-text {
-    grid-column: 1;
-    grid-row: 1;
-    align-items: center;
     justify-content: center;
   }
+}
 
-  .hero a {
-    text-decoration: none;
+/* ================================================== */
+/* 14. RESPONSIVE — max-width: 600px                  */
+/* ================================================== */
+
+@media (max-width: 600px) {
+  .planet-container {
+    padding: 55px 16px;
+    border-radius: 22px;
   }
 
-  .hero-button {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 12px;
-    font-size: 12px;
-    margin-top: 40px;
+  .planet-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
   }
 
-  .primary-button {
-    background-color: #164baf;
-    white-space: nowrap;
-    color: white;
-    border: none;
-    font-weight: 600;
-    border-radius: 4px;
-    padding: 12px 24px;
-    cursor: pointer;
+  .planet-subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 38px;
   }
 
-  .secondary-button {
-    display: inline-block;
-    background-color: #051540;
-    color: white;
-    padding: 12px 24px;
-    font-weight: 600;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    border: 0.5px solid #dddddd;
-    box-sizing: border-box;
-    white-space: nowrap;
+  .planet-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 14px;
   }
 
-  /* Typography used in Hero */
-  h1 {
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 121%;
-    letter-spacing: 0%;
-    margin-bottom: 24px;
-    color: #ffffff;
+  .planet-card img {
+    height: 130px;
   }
 
-  #hero-p {
-    font-family: "Inter", sans-serif;
-    color: #dddddd;
-    font-weight: 500;
-    line-height: 160%;
-    font-size: 18px;
+  .planet-card figcaption {
+    padding: 14px 10px 16px;
   }
 
-  /* video section */
-  .video-section {
-    padding: 34px 5%;
-    width: 100%;
-    text-align: center;
+  .planet-card figcaption p:first-child {
+    font-size: 0.9rem;
   }
 
-  .video-section .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 30px 0 40px 0;
-  }
-
-  .video-text {
-    width: 100%;
-    order: 2;
-  }
-  .video-text h2 {
-    font-family: "Inter", sans-serif;
-    font-size: 32px;
-    line-height: 150%;
-    color: #0d47a1;
-    margin-bottom: 20px;
-  }
-
-  .video-text p {
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    line-height: 180%;
-    color: #333;
-  }
-
-  .video-wrapper {
-    width: 100%;
-    order: 1;
-  }
-
-  .video-wrapper video {
-    width: 100%;
-    height: auto;
-    border-radius: 30px;
-    display: block;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  /* --- RESPONSIVENESS (Mobile View) --- */
-  /* hero*/
-  @media (max-width: 768px) {
-    .hero .container {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      text-align: center;
-      padding: 0px 30px;
-    }
-
-    .hero-image {
-      grid-column: 1;
-      grid-row: 1;
-      justify-content: center;
-    }
-
-    .hero-button {
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .hero h1 {
-      margin-top: -30px;
-      font-size: 30px;
-    }
-    #hero-p {
-      font-size: 18px;
-    }
-
-    .container {
-      padding: 4px 10px;
-    }
-
-    /* video */
-    .video-section .container {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .video-text {
-      order: 1;
-    }
-
-    .video-wrapper {
-      order: 2;
-    }
-
-    .video-text h2 {
-      font-size: 28px;
-    }
-    .video-text p {
-      font-size: 16px;
-    }
+  .planet-card figcaption p:last-child {
+    font-size: 0.75rem;
   }
 }
