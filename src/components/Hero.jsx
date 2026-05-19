@@ -21,7 +21,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-image">
-          <img src="hero.png" alt="the world globe" />
+          <img src="/hero.png" alt="the world globe" />
         </div>
       </div>
     </section>
