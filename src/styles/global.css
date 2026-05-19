@@ -235,10 +235,9 @@ h1 {
 /* ================================================== */
 /* 5. HERO SECTION                                    */
 /* ================================================== */
-
 .hero {
   background: #051540;
-  padding: 5px 0px 50px 0px;
+  padding: 34px 5%;
   width: 100%;
 }
 
@@ -250,22 +249,33 @@ h1 {
   padding: 0px 63px;
 }
 
-.hero img {
-  width: 100%;
-  max-width: 644px;
-  height: auto;
-  align-items: center;
-}
-
 .hero a {
   text-decoration: none;
 }
 
-.hero-text {
+/* .hero-text-box {
   grid-column: 1;
   grid-row: 1;
-  align-items: center;
+} */
+
+.hero-text-box h1 {
+  font-size: 35px;
+  line-height: 1.2;
+}
+
+.hero-image {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 50%;
 }
 
 .hero-button {
@@ -282,10 +292,10 @@ h1 {
   font-family: "Inter", sans-serif;
   color: #dddddd;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 13px;
+
   line-height: 160%;
 }
-
 /* ================================================== */
 /* 6. VIDEO SECTION                                   */
 /* ================================================== */
@@ -345,7 +355,7 @@ h1 {
 .planet-container {
   max-width: 1250px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 34px 5%;
   background: #eef4ff;
 }
 
@@ -422,7 +432,7 @@ h1 {
 .table-section {
   background: #f7f8fb;
   color: #172033;
-  padding: 72px 20px;
+  padding: 34px 5%;
 }
 
 .table-text {
@@ -509,7 +519,7 @@ h1 {
 /* ================================================== */
 
 .contact-section {
-  padding: 88px 24px;
+  padding: 34px 5%;
   background: #ffffff;
   width: 100%;
 }
@@ -789,7 +799,7 @@ h1 {
 .footer {
   background-color: #0f1f4b;
   color: white;
-  padding: 40px 20px;
+  padding: 34px 5%;
 }
 
 .footer-container {

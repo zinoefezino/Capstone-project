@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="container">
-        <div className="hero-p">
+        <div className="hero-text-box">
           <h1>Explore Our Solar System Through Data</h1>
           <p id="hero-p">
             Understand the planets not just by name, but by measurable facts.
@@ -16,7 +16,7 @@ export default function Hero() {
               Explore the Data
             </a>
             <a className="secondary-button" href="#contact">
-              Contact us
+              Contact Us
             </a>
           </div>
         </div>
