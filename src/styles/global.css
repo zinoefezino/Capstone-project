@@ -347,7 +347,6 @@ h1 {
   margin: 0 auto;
   padding: 80px 20px;
   background: #eef4ff;
-  border-radius: 28px;
 }
 
 .planet-title {
@@ -1020,7 +1019,6 @@ h1 {
 @media (max-width: 600px) {
   .planet-container {
     padding: 55px 16px;
-    border-radius: 22px;
   }
 
   .planet-title {
