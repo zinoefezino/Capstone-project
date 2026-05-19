@@ -54,7 +54,7 @@ function ImageGallery() {
   }, []);
 
   return (
-    <section id="Image" className="planet-container">
+    <section id="image" className="planet-container">
       <h1 className="planet-title">
         Visualizing the Differences Between Planets
       </h1>
