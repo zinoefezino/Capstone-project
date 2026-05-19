@@ -1,10 +1,15 @@
-import Footer from "./components/Footer";
+import ContactForm from "./components/ContactForm";
+import React from "react";
+import Hero from "./components/Hero";
+import VideoSection from "./components/VideoSection";
 
 function App() {
   return (
-    <div> 
-    <Footer/>
-    </div> 
+    <div>
+      <Hero />;
+      <VideoSection />
+      <ContactForm />
+    </div>
   );
 }
 
