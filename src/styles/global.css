@@ -353,7 +353,7 @@ h1 {
 /* ================================================== */
 
 .planet-container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 34px 5%;
   background: #eef4ff;
