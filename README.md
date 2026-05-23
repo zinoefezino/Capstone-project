@@ -1,16 +1,59 @@
-# React + Vite
+# PlanetTable Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+The `PlanetTable` component fetches and displays data about planets 
+in our solar system in a responsive grid layout. Each planet is 
+displayed as a card showing its image, name, and distance from the sun.
 
-Currently, two official plugins are available:
+## Screenshot
+(Add a screenshot of your planet section here)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- React
+- CSS
+- Fetch API
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js installed
+- Git installed
 
-## Expanding the ESLint configuration
+### Installation
+1. Clone the repo
+   git clone https://github.com/zinoefezino/Capstone-project.git
+2. Navigate into the project
+   cd Capstone-project
+3. Install dependencies
+   npm install
+4. Run the project
+   npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## API
+Data is fetched from:
+https://anurella.github.io/json/planets.json
+
+## Features
+- Fetches planet name, distance from sun and image from API
+- Displays planets in a responsive grid layout
+- Uses semantic figure and figcaption elements
+- Handles loading and error states
+- Fully responsive across desktop, tablet and mobile
+
+## Responsive Breakpoints
+| Screen Size | Columns |
+|-------------|---------|
+| Desktop (above 768px) | 3 columns |
+| Tablet (768px and below) | 2 columns |
+| Mobile (480px and below) | 2 columns |
+
+## File Location
+src/
+├── components/
+│   └── PlanetTable.jsx
+├── styles/
+│   └── global.css
+## Author
+**ADENIYI JULIUS**
+Branch: `planet-Table`
